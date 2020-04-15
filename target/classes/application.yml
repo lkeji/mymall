@@ -1,0 +1,16 @@
+#����˿�
+server:
+  port: 9090
+#mysql���ݿ�
+spring:
+  datasource:
+    url:  jdbc:mysql://127.0.0.1:3307/test?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai
+    username: root
+    password: Bodan388
+    driverClassName:  com.mysql.cj.jdbc.Driver
+
+
+mybatis:
+  mapper-locations:
+    - classpath:mapper/*.xml
+    - classpath*:com/**/mapper/*.xmlss
