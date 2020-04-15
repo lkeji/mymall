@@ -11,6 +11,7 @@ spring:
 
 
 mybatis:
+  #xml文件的路径配置的模糊匹配
   mapper-locations:
     - classpath:mapper/*.xml
-    - classpath*:com/**/mapper/*.xmlss
+    - classpath*:com/**/mapper/*.xml
