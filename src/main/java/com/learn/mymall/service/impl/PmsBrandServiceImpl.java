@@ -1,10 +1,12 @@
 package com.learn.mymall.service.impl;
 
 import com.learn.mymall.entity.PmsBrand;
+import com.learn.mymall.mapper.PmsBrandMapper;
 import com.learn.mymall.service.PmsBrandServiceI;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
+import java.util.*;
 
 /**
  * @program: mymall
@@ -14,33 +16,33 @@ import java.util.List;
  */
 @Service
 public class PmsBrandServiceImpl implements PmsBrandServiceI {
-    @Override
-    public List<PmsBrand> listAllBrand() {
-        return null;
-    }
+
+    @Autowired
+    private PmsBrandMapper pmsBrandMapper;
 
     @Override
     public int createBrand(PmsBrand brand) {
-        return 0;
+        return pmsBrandMapper.insert(brand);
     }
 
     @Override
-    public int updateBrand(Long id, PmsBrand brand) {
-        return 0;
+    public int updateBrand(PmsBrand brand) {
+        return pmsBrandMapper.updateByPrimaryKey(brand);
     }
 
     @Override
     public int deleteBrand(Long id) {
-        return 0;
+        return pmsBrandMapper.deleteByPrimaryKey(id
+        );
     }
 
     @Override
     public List<PmsBrand> listBrand(int pageNum, int pageSize) {
-        return null;
+        List<PmsBrand> result=new ArrayList<>();
+        Map mpas=new HashMap();
+        PmsBrand pmsBrand = pmsBrandMapper.selectByPrimaryKey(mpas);
+        result.add(pmsBrand);
+        return result;
     }
 
-    @Override
-    public PmsBrand getBrand(Long id) {
-        return null;
-    }
 }

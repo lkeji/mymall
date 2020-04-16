@@ -11,16 +11,14 @@ import java.util.List;
  * @create: 2020-04-16 09:36
  */
 public interface PmsBrandServiceI {
-    List<PmsBrand> listAllBrand();
 
     int createBrand(PmsBrand brand);
 
-    int updateBrand(Long id, PmsBrand brand);
+    int updateBrand(PmsBrand brand);
 
     int deleteBrand(Long id);
 
     List<PmsBrand> listBrand(int pageNum, int pageSize);
 
-    PmsBrand getBrand(Long id);
 
 }
