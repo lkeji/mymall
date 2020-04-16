@@ -9,8 +9,11 @@ spring:
     password: Bodan388
     driverClassName:  com.mysql.cj.jdbc.Driver
 
-
+  #xml�ļ���·�����õ�ģ��ƥ��
 mybatis:
   mapper-locations:
     - classpath:mapper/*.xml
-    - classpath*:com/**/mapper/*.xmlss
+    - classpath*:com/**/mapper/*.xml
+logging:
+  config:
+    classpath: logback-spring.xml
