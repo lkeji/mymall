@@ -9,9 +9,11 @@ spring:
     password: Bodan388
     driverClassName:  com.mysql.cj.jdbc.Driver
 
-
-mybatis:
   #xml文件的路径配置的模糊匹配
+mybatis:
   mapper-locations:
     - classpath:mapper/*.xml
     - classpath*:com/**/mapper/*.xml
+logging:
+  config:
+    classpath: logback-spring.xml
