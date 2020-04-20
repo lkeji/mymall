@@ -1,11 +1,15 @@
 package com.learn.mymall.entity;
 
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 
 import java.io.Serializable;
 
+@ApiModel(value = "PmsBrand", description = "品牌管理实体类")
 @Data
 public class PmsBrand implements Serializable {
+    @ApiModelProperty(value = "ID")
     private Long id;
 
     /**
@@ -13,6 +17,7 @@ public class PmsBrand implements Serializable {
      *
      * @mbggenerated
      */
+    @ApiModelProperty(value = "名称")
     private String name;
 
     /**
@@ -20,6 +25,7 @@ public class PmsBrand implements Serializable {
      *
      * @mbggenerated
      */
+    @ApiModelProperty(value = "首字母")
     private String firstLetter;
 
     /**
@@ -27,6 +33,7 @@ public class PmsBrand implements Serializable {
      *
      * @mbggenerated
      */
+    @ApiModelProperty(value = "排序")
     private Integer sort;
 
     /**
@@ -34,6 +41,7 @@ public class PmsBrand implements Serializable {
      *
      * @mbggenerated
      */
+    @ApiModelProperty(value = "是否为品牌制造商：0->不是；1->是")
     private Integer factoryStatus;
 
     /**
@@ -41,6 +49,7 @@ public class PmsBrand implements Serializable {
      *
      * @mbggenerated
      */
+    @ApiModelProperty(value = "是否显示")
     private Integer showStatus;
 
     /**
@@ -48,6 +57,7 @@ public class PmsBrand implements Serializable {
      *
      * @mbggenerated
      */
+    @ApiModelProperty(value = "产品数量")
     private Integer productCount;
 
     /**
@@ -55,6 +65,7 @@ public class PmsBrand implements Serializable {
      *
      * @mbggenerated
      */
+    @ApiModelProperty(value = "产品评论数量")
     private Integer productCommentCount;
 
     /**
@@ -62,6 +73,7 @@ public class PmsBrand implements Serializable {
      *
      * @mbggenerated
      */
+    @ApiModelProperty(value = "品牌logo")
     private String logo;
 
     /**
@@ -69,6 +81,7 @@ public class PmsBrand implements Serializable {
      *
      * @mbggenerated
      */
+    @ApiModelProperty(value = "专区大图")
     private String bigPic;
 
     /**
@@ -76,6 +89,7 @@ public class PmsBrand implements Serializable {
      *
      * @mbggenerated
      */
+    @ApiModelProperty(value = "品牌故事")
     private String brandStory;
 
     private static final long serialVersionUID = 1L;
