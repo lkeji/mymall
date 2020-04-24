@@ -32,36 +32,50 @@
         <!--生成Model类存放位置 -->
         <javaModelGenerator targetPackage="com.learn.mymall.entity"
                             targetProject="src/main/java">
-            <!-- 在targetPackage的基础上，根据数据库的schema再生成一层package，最终生成的类放在这个package下，默认为false -->
+<!--            &lt;!&ndash; 在targetPackage的基础上，根据数据库的schema再生成一层package，最终生成的类放在这个package下，默认为false &ndash;&gt;
             <property name="enableSubPackages" value="true" />
-            <!-- 设置是否在getter方法中，对String类型字段调用trim()方法 -->
+            &lt;!&ndash; 设置是否在getter方法中，对String类型字段调用trim()方法 &ndash;&gt;
             <property name="trimStrings" value="true" />
-
-            <!-- for MyBatis3/MyBatis3Simple 自动为每一个生成的类创建一个构造方法，构造方法包含了所有的field；而不是使用setter； -->
+            &lt;!&ndash; for MyBatis3/MyBatis3Simple 自动为每一个生成的类创建一个构造方法，构造方法包含了所有的field；而不是使用setter； &ndash;&gt;
             <property name="constructorBased" value="false" />
-            <!-- for MyBatis3/MyBatis3Simple 是否创建一个不可变的类，如果为true， 那么MBG会创建一个没有setter方法的类，取而代之的是类似constructorBased的类 -->
-            <property name="immutable" value="false" />
+            &lt;!&ndash; for MyBatis3/MyBatis3Simple 是否创建一个不可变的类，如果为true， 那么MBG会创建一个没有setter方法的类，取而代之的是类似constructorBased的类 &ndash;&gt;
+            <property name="immutable" value="false" />-->
         </javaModelGenerator>
         <!--生成映射文件存放位置 -->
-        <sqlMapGenerator targetPackage="mapper"
-                         targetProject="src/main/resources">
-            <property name="enableSubPackages" value="true" />
-        </sqlMapGenerator>
+        <sqlMapGenerator targetPackage="mapper" targetProject="src/main/resources"/>
         <!--指定生成mapper.xml的路径,就是Dao -->
         <javaClientGenerator type="XMLMAPPER"
-                             targetPackage="com.learn.mymall.mapper" targetProject="src/main/java">
-            <property name="enableSubPackages" value="true" />
-        </javaClientGenerator>
-        <!--生成对应表及类名 -->
-<!--        <table tableName="%" enableCountByExample="false"-->
-        <!--先生成单表做测试-->
-        <table tableName="pms_brand" enableCountByExample="false"
-               enableUpdateByExample="false" enableDeleteByExample="false"
-               enableSelectByExample="false" selectByExampleQueryId="false">
-            <!--驼峰命名法,false才是驼峰命名法-->
-            <property name="useActualColumnNames" value="false" />
-            <!-- 需要插入时返回主键值，请将此属性打开，column值为主键的列明 -->
+                             targetPackage="com.learn.mymall.mapper" targetProject="src/main/java"/>
+   <!--     &lt;!&ndash;品牌信息表&ndash;&gt;
+        <table tableName="pms_brand" >
+            &lt;!&ndash; 需要插入时返回主键值，请将此属性打开，column值为主键的列明 &ndash;&gt;
             <generatedKey column="id" sqlStatement="MySql" identity="true" />
         </table>
+        &lt;!&ndash;后台用户表&ndash;&gt;
+        <table tableName="ums_admin" >
+            &lt;!&ndash; 需要插入时返回主键值，请将此属性打开，column值为主键的列明 &ndash;&gt;
+            <generatedKey column="id" sqlStatement="MySql" identity="true" />
+        </table>-->
+
+
+
+        <!--后台用户角色表-->
+        <table tableName="ums_role">
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+        </table>
+        <!--后台用户权限表-->
+        <table tableName="ums_permission">
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+        </table>
+        <table tableName="ums_admin_role_relation">
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+        </table>
+        <table tableName="ums_role_permission_relation">
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+        </table>
+        <table tableName="ums_admin_permission_relation">
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+        </table>
+
     </context>
 </generatorConfiguration>
