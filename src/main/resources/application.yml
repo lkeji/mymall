@@ -24,6 +24,7 @@ spring:
     timeout: 3000ms # 连接超时时间（毫秒）
   #发送邮箱
   mail:
+    port: 465 #不加会报错,因为QQ邮箱默认端口为465：Couldn't connect to host, port: smtp.qq.com, 25; timeout -1
     host: smtp.qq.com
     username: 1545431995@qq.com
     #填写自己的邮箱授权码
@@ -32,6 +33,10 @@ spring:
       mail:
         smtp:
           auth: true
+          socketFactory: #不加会报错，因为QQ邮箱默认端口为465：Couldn't connect to host, port: smtp.qq.com, 25; timeout -1
+            port: 465
+            class: javax.net.ssl.SSLSocketFactory
+            fallback: false
           starttls:
             enable: true
             required: true
