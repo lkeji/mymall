@@ -20,7 +20,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @create: 2020-04-20 16:25
  */
 @RestController
-@Api(value="UmsMemberController",tags={"会员登录注册管理"})
+@Api(tags={"会员登录注册管理"})
 @RequestMapping("/sso")
 public class UmsMemberController {
 

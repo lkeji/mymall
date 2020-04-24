@@ -23,7 +23,7 @@ import java.util.List;
  * @create: 2020-04-16 09:34
  **/
 @RestController
-@Api(value="用户controller",tags={"品牌管理"})
+@Api(tags={"商品品牌管理"})
 @RequestMapping("/PmsBrand")
 public class PmsBrandController {
     @Autowired
