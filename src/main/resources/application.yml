@@ -40,7 +40,6 @@ spring:
           starttls:
             enable: true
             required: true
-
   data:
     #ES
     elasticsearch:
@@ -53,7 +52,14 @@ spring:
       port: 27017 #mongoDB的端口号
       host: 127.0.0.1 #mongoDB的连接地址
       database: mall-port # mongodb的连接的数据库
-
+  #RabbitMQ
+  rabbitmq:
+    host: 127.0.0.1 # rabbitmq的连接地址
+    port: 5672 # rabbitmq的连接端口号
+    virtual-host: /mall # rabbitmq的虚拟host
+    username: mallMQ # rabbitmq的用户名
+    password: mallMQ # rabbitmq的密码
+    publisher-confirms: true #如果对异步消息需要回调必须设置为true
 #xml文件的路径配置的模糊匹配
 mybatis:
   mapper-locations:
