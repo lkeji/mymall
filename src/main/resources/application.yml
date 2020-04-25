@@ -40,6 +40,13 @@ spring:
           starttls:
             enable: true
             required: true
+  #ES
+  data:
+    elasticsearch:
+      repositories:
+        enabled: true #ES健康检查
+      cluster-nodes: 127.0.0.1:9300 # es的连接地址及端口号(9300是ES和java的交互端口，9200是ES和http的交互端口)
+      cluster-name: elasticsearch # es集群的名称
 
 #xml文件的路径配置的模糊匹配
 mybatis:
