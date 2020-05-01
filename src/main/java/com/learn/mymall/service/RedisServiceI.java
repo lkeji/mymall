@@ -20,6 +20,10 @@ public interface RedisServiceI {
      * 设置超期时间
      */
     boolean expire(String key, long expire);
+    /*
+    * 是否存在该数据
+    * */
+    boolean isPresence(String key);
 
     /**
      * 删除数据

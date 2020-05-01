@@ -32,6 +32,11 @@ public class RedisServiceImpl implements RedisServiceI {
     }
 
     @Override
+    public boolean isPresence(String key) {
+        return stringRedisTemplate.hasKey(key);
+    }
+
+    @Override
     public void remove(String key) {
         stringRedisTemplate.delete(key);
     }
